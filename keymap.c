@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(
         KC_NO,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,  /**/    KC_J,    KC_L,    KC_U,    KC_Y,    TD(TD_SCLN_QUOTE),    KC_NO,
         KC_NO,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,  /**/    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,       KC_NO,
-        KC_NO,  TD(TD_Z_UNDO),    TD(TD_X_CUT),    TD(TD_C_COPY), KC_D,    TD(TD_V_PASTE),  /**/    KC_K,    KC_H,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
+        KC_NO,  KC_Z ,    KC_X,    KC_C,    KC_D,    KC_V,  /**/    KC_K,    KC_H,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
                                         KC_LGUI, LT(2, KC_SPACE), OSM(MOD_LSFT),       OSM(MOD_LCTL) , TO(2), OSM(MOD_LALT)
      ),
      /* 1 QWERTY (For Korean Typing)
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │Tab│ ` │ ~ │Alt│Del│       │\ h│ { │ } │| e│Ent│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │(1)│   │   │   │   │       │ [ │ ( │ ) │ ] │(4)│
+      * │(1)│Cut│Cpy│Und│Pst│       │ [ │ ( │ ) │ ] │(4)│
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
       *               │Win├───┐           ┌───┤Alt│
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [2] = LAYOUT_split_3x6_3(
         KC_NO,  KC_ESCAPE,    KC_AT, LSFT(KC_3),    LSFT(KC_4),    KC_PERC,  /* */ KC_CIRC ,KC_AMPR ,KC_ASTR ,KC_EQL, KC_BSPC,    KC_NO,
         KC_NO, KC_TAB,KC_GRAVE    ,LSFT(KC_GRAVE)    ,KC_LALT    ,KC_DEL,     /* */  TD(TD_BKSL_HME),LSFT(KC_LBRC),LSFT(KC_RBRC),TD(TD_PIPE_END),KC_ENTER, KC_NO,
-        KC_NO,  TO(1), KC_NO   ,KC_NO   ,KC_NO   ,KC_NO    /* */ ,KC_LBRC,  KC_LPRN, KC_RPRN, KC_RBRC   ,TO(4), KC_NO,
+        KC_NO,  TO(1), LCTL(KC_X)   ,LCTL(KC_C)   ,LCTL(KC_Z)   ,LCTL(KC_V)    /* */ ,KC_LBRC,  KC_LPRN, KC_RPRN, KC_RBRC   ,TO(4), KC_NO,
                                             KC_LGUI, TO(0), OSM(MOD_LSFT),          OSM(MOD_LCTL)   ,TO(3),  KC_RALT
     ),
      /* 3 Numbers and volume
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │Tab│Mut│ ; │ / │ - │       │ . │4/F│3/F│6/F│Ent│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │(1)│   │ , │ = │ . │       │ 0 │1/F│2/F│3/F│(4)│
+      * │(1)│   │ , │ = │Spc│       │ 0 │1/F│2/F│3/F│(4)│
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
       *               │Win├───┐           ┌───┤Alt│
@@ -137,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [3] = LAYOUT_split_3x6_3(
    KC_NO, KC_ESCAPE, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, LSFT(KC_8), LSFT(KC_EQL), /* */ TD(TD_DOT_F11),   TD(TD_7_F7),  TD(TD_8_F8), TD(TD_9_F9),KC_BSPC, KC_NO,
     KC_NO, KC_TAB, KC_MUTE, KC_SCLN, KC_SLSH ,KC_MINS,   /* */ TD(TD_DOT_F12),   TD(TD_4_F4), TD(TD_5_F5), TD(TD_6_F6),   KC_ENTER, KC_NO,
-    KC_NO, TO(1),   KC_NO, KC_COMM, KC_EQL, KC_DOT, /* */  KC_0,   TD(TD_1_F1), TD(TD_2_F2), TD(TD_3_F3),   TO(4), KC_NO,
+    KC_NO, TO(1),   KC_NO, KC_COMM, KC_EQL, KC_SPACE, /* */  KC_0,   TD(TD_1_F1), TD(TD_2_F2), TD(TD_3_F3),   TO(4), KC_NO,
                                             KC_LGUI, TO(0), OSM(MOD_LSFT),          OSM(MOD_LCTL)   ,TO(2), OSM(MOD_LALT)
   ),
      /* 4 Navigation
@@ -146,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │Tab│M L│M D│M R│DEL│       │LFT│DWN│UP │RHT│Ent│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │(1)│RCK│S U│S D│   │       │LCK│Ac1│Ac2│Ac3│   │
+      * │(1)│RBn│S U│S D│   │       │LBn│PDn│PUp│Ac2│Ac3│
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
       *               │Win├───┐           ┌───┤Alt│
@@ -157,18 +157,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [4] = LAYOUT_split_3x6_3(
         KC_NO, KC_ESCAPE, KC_MS_WH_LEFT, KC_MS_UP, KC_MS_WH_RIGHT, LCTL(KC_Q),  /* */ LALT(KC_LEFT), LCTL(LSFT(KC_TAB)), LCTL(KC_TAB), LALT(KC_RIGHT),KC_BSPC, KC_NO,
 	    KC_NO, KC_TAB,KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_DEL, /* */ KC_LEFT,   KC_DOWN, KC_UP,   KC_RIGHT,   KC_ENTER, KC_NO,
-        KC_NO, TO(1),   KC_MS_BTN2,     KC_MS_WH_UP,    KC_MS_WH_DOWN, KC_NO, /* */ KC_MS_BTN1,     KC_MS_ACCEL0,   KC_MS_ACCEL1,   KC_MS_ACCEL2,   KC_NO, KC_NO,
+        KC_NO, TO(1),   KC_MS_BTN2,     KC_MS_WH_UP,    KC_MS_WH_DOWN, KC_NO, /* */ KC_MS_BTN1,     KC_PAGE_DOWN,   KC_PAGE_UP,   KC_MS_ACCEL1,   KC_MS_ACCEL2, KC_NO,
                                             KC_LGUI, TO(0), OSM(MOD_LSFT),          OSM(MOD_LCTL)   ,TO(2), OSM(MOD_LALT)
 
     )
 };
 
-// Workaround for https://github.com/qmk/qmk_firmware/issues/16406
-void suspend_wakeup_init_user(void) {
-    NVIC_SystemReset();
-}
-
-/*
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
         case 0:
@@ -191,4 +185,3 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
-*/
