@@ -66,10 +66,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │ A │ R │ S │ T │ G │       │ M │ N │ E │ I │ O │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │Z *│X *│C *│ D │V *│       │ K │ H │, -│. !│/ _│
+      * │Z*A│X  │C  │ D │V  │       │ K │ H │, -│. !│/ _│
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
-      *               │Win├───┐           ┌───┤Alt│
+      *               │Win├───┐           ┌───┤Bks│
       *               └───┤Sp2├───┐   ┌───┤(2)├───┘
       *                   └───┤Sft│   │Ctl├───┘
       *                       └───┘   └───┘
@@ -77,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(
         KC_NO,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,  /**/    KC_J,    KC_L,    KC_U,    KC_Y,    TD(TD_SCLN_QUOTE),    KC_NO,
         KC_NO,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,  /**/    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,       KC_NO,
-        KC_NO,  KC_Z ,    KC_X,    KC_C,    KC_D,    KC_V,  /**/    KC_K,    KC_H,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
-                                        KC_LGUI, LT(2, KC_SPACE), OSM(MOD_LSFT),       OSM(MOD_LCTL) , TO(2), OSM(MOD_LALT)
+        KC_NO,  MT(KC_Z, MOD_LALT) ,    KC_X,    KC_C,    KC_D,    KC_V,  /**/    KC_K,    KC_H,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
+                                        KC_LGUI, LT(2, KC_SPACE), OSM(MOD_LSFT),       OSM(MOD_LCTL) , TO(2), KC_BSPC
      ),
      /* 1 QWERTY (For Korean Typing)
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
@@ -86,10 +86,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │ A │ S │ D │ F │ G │       │ H │ J │ K │ L │ ; │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │ Z │ X │ C │ V │ B │       │ N │ M │, ?│. !│/ -│
+      * │Z*A│ X │ C │ V │ B │       │ N │ M │, ?│. !│/ -│
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
-      *               │Win├───┐           ┌───┤Alt│
+      *               │Win├───┐           ┌───┤Bks│
       *               └───┤Sp2├───┐   ┌───┤(2)├───┘
       *                   └───┤Sft│   │Ctl├───┘
       *                       └───┘   └───┘
@@ -97,8 +97,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [1] = LAYOUT_split_3x6_3(
         KC_NO,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_NO,
         KC_NO,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_NO,
-        KC_NO,  TD(TD_Z_UNDO),    TD(TD_X_CUT),    TD(TD_C_COPY),    TD(TD_V_PASTE),    TD(TD_B_PASTE),                               KC_N,    KC_M,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
-                                        KC_LGUI, LT(2, KC_SPACE), OSM(MOD_LSFT),       OSM(MOD_LCTL) , TO(2), OSM(MOD_LALT)
+        KC_NO,  MT(KC_Z, MOD_LALT),    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
+                                        KC_LGUI, LT(2, KC_SPACE), OSM(MOD_LSFT),       OSM(MOD_LCTL) , TO(2), KC_BSPC
     ),
      /* 2 Symbols
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
