@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(
         KC_NO,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,  /**/    KC_J,    KC_L,    KC_U,    KC_Y,    TD(TD_SCLN_QUOTE),    KC_NO,
         KC_NO,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,  /**/    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,       KC_NO,
-        KC_NO,  MT(KC_Z, MOD_LALT) ,    KC_X,    KC_C,    KC_D,    KC_V,  /**/    KC_K,    KC_H,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
+        KC_NO,  MT(MOD_LALT, KC_Z) ,    KC_X,    KC_C,    KC_D,    KC_V,  /**/    KC_K,    KC_H,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
                                         KC_LGUI, LT(2, KC_SPACE), OSM(MOD_LSFT),       OSM(MOD_LCTL) , TO(2), KC_BSPC
      ),
      /* 1 QWERTY (For Korean Typing)
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [1] = LAYOUT_split_3x6_3(
         KC_NO,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_NO,
         KC_NO,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_NO,
-        KC_NO,  MT(KC_Z, MOD_LALT),    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
+        KC_NO,  MT(MOD_LALT, KC_Z),    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    TD(TD_COMM_MINS), TD(TD_DOT_EXLM),  TD(TD_SLSH_UND), KC_NO,
                                         KC_LGUI, LT(2, KC_SPACE), OSM(MOD_LSFT),       OSM(MOD_LCTL) , TO(2), KC_BSPC
     ),
      /* 2 Symbols
@@ -121,13 +121,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             KC_LGUI, TO(0), OSM(MOD_LSFT),          OSM(MOD_LCTL)   ,TO(3),  KC_RALT
     ),
      /* 3 Numbers and volume
-      * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
-      * │Esc│V D│V U│ * │ + │       │F11│7/F│4/F│9/F│BSp│
-      * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │Tab│Mut│ ; │ / │ - │       │ . │4/F│3/F│6/F│Ent│
-      * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │(1)│   │ , │ = │Spc│       │ 0 │1/F│2/F│3/F│(4)│
-      * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
+      * ┌───┬───┬───┬───┬───┐       ┌─────┬───┬───┬───┬───┐
+      * │Esc│V D│V U│ * │ + │       │./F11│7/F│4/F│9/F│BSp│
+      * ├───┼───┼───┼───┼───┤       ├─────┼───┼───┼───┼───┤
+      * │Tab│Mut│ ; │ / │ - │       │./F12│4/F│3/F│6/F│Ent│
+      * ├───┼───┼───┼───┼───┤       ├─────┼───┼───┼───┼───┤
+      * │(1)│(5)│ , │ = │Spc│       │  0  │1/F│2/F│3/F│(4)│
+      * └───┴───┴───┴───┴───┘       └─────┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
       *               │Win├───┐           ┌───┤Alt│
       *               └───┤(0)├───┐   ┌───┤(2)├───┘
@@ -137,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [3] = LAYOUT_split_3x6_3(
    KC_NO, KC_ESCAPE, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, LSFT(KC_8), LSFT(KC_EQL), /* */ TD(TD_DOT_F11),   TD(TD_7_F7),  TD(TD_8_F8), TD(TD_9_F9),KC_BSPC, KC_NO,
     KC_NO, KC_TAB, KC_MUTE, KC_SCLN, KC_SLSH ,KC_MINS,   /* */ TD(TD_DOT_F12),   TD(TD_4_F4), TD(TD_5_F5), TD(TD_6_F6),   KC_ENTER, KC_NO,
-    KC_NO, TO(1),   KC_NO, KC_COMM, KC_EQL, KC_SPACE, /* */  KC_0,   TD(TD_1_F1), TD(TD_2_F2), TD(TD_3_F3),   TO(4), KC_NO,
+    KC_NO, TO(1),   TO(5), KC_COMM, KC_EQL, KC_SPACE, /* */  KC_0,   TD(TD_1_F1), TD(TD_2_F2), TD(TD_3_F3),   TO(4), KC_NO,
                                             KC_LGUI, TO(0), OSM(MOD_LSFT),          OSM(MOD_LCTL)   ,TO(2), OSM(MOD_LALT)
   ),
      /* 4 Navigation
@@ -146,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
       * │Tab│M L│M D│M R│DEL│       │LFT│DWN│UP │RHT│Ent│
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │(1)│RBn│S U│S D│   │       │LBn│PDn│PUp│Ac2│Ac3│
+      * │(1)│RBn│S U│S D│Spc│       │LBn│PDn│PUp│Ac2│Ac3│
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *               ┌───┐                   ┌───┐
       *               │Win├───┐           ┌───┤Alt│
@@ -157,12 +157,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [4] = LAYOUT_split_3x6_3(
         KC_NO, KC_ESCAPE, KC_MS_WH_LEFT, KC_MS_UP, KC_MS_WH_RIGHT, LCTL(KC_Q),  /* */ LALT(KC_LEFT), LCTL(LSFT(KC_TAB)), LCTL(KC_TAB), LALT(KC_RIGHT),KC_BSPC, KC_NO,
 	    KC_NO, KC_TAB,KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_DEL, /* */ KC_LEFT,   KC_DOWN, KC_UP,   KC_RIGHT,   KC_ENTER, KC_NO,
-        KC_NO, TO(1),   KC_MS_BTN2,     KC_MS_WH_UP,    KC_MS_WH_DOWN, KC_NO, /* */ KC_MS_BTN1,     KC_PAGE_DOWN,   KC_PAGE_UP,   KC_MS_ACCEL1,   KC_MS_ACCEL2, KC_NO,
+        KC_NO, TO(1),   KC_MS_BTN2,     KC_MS_WH_UP,    KC_MS_WH_DOWN, KC_SPACE, /* */ KC_MS_BTN1,     KC_PAGE_DOWN,   KC_PAGE_UP,   KC_MS_ACCEL1,   KC_MS_ACCEL2, KC_NO,
                                             KC_LGUI, TO(0), OSM(MOD_LSFT),          OSM(MOD_LCTL)   ,TO(2), OSM(MOD_LALT)
+
+    ),
+     /* 5 LOL
+      * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
+      * │ 1 │ 2 │ 3 │ 4 │ 5 │       │   │   │   │   │   │
+      * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+      * │ Q │ W │ E │ R │ T │       │   │   │   │   │   │
+      * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
+      * │Sft│Tab│ D │ F │ G │       │   │   │   │   │   │
+      * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
+      *               ┌───┐                   ┌───┐
+      *               │   ├───┐           ┌───┤(0)│
+      *               └───┤Spc├───┐   ┌───┤(0)├───┘
+      *                   └───┤   │   │(0)├───┘
+      *                       └───┘   └───┘
+      */
+  [5] = LAYOUT_split_3x6_3(
+        KC_NO,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
+        KC_NO,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
+        KC_NO,  KC_LSFT,    KC_TAB,    KC_D,    KC_F,    KC_G,                               KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO, KC_NO,
+                                        KC_NO, KC_SPACE, KC_NO,       TO(0) , TO(0), TO(0)
 
     )
 };
 
+/*
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
         case 0:
@@ -180,8 +202,12 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         case 4:
             tap_code16(KC_F24);
             break;
+        case 5:
+            tap_code16(KC_F19);
+            break;
         default:
             break;
     }
     return state;
 }
+*/
