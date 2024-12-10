@@ -17,11 +17,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-
 #undef TAPPING_TERM
 #define TAPPING_TERM 240
 #define RETRO_TAPPING
 
+#define PERMISSIVE_HOLD
 
 #undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY 5
@@ -35,7 +35,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_DECELERATED_SPEED 12
 #undef MOUSEKEY_MAX_SPEED
 #define MOUSEKEY_MAX_SPEED 22
-#define USB_SUSPEND_WAKEUP_DELAY 0
+#undef USB_SUSPEND_WAKEUP_DELAY
+#define USB_SUSPEND_WAKEUP_DELAY 200
 #undef MOUSEKEY_WHEEL_INTERVAL
 #define MOUSEKEY_WHEEL_INTERVAL 83
 
@@ -44,4 +45,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #undef MOUSEKEY_WHEEL_MAX_SPEED
 #define MOUSEKEY_WHEEL_MAX_SPEED 3
-
